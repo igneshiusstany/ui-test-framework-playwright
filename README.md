@@ -74,19 +74,19 @@ Use the instructions below to install and switch to Node 18.x.x based on your OS
  ┗ 📜 README.md
 
 # Additional Tips
-To run only in Chromium:
+* To run only in Chromium:
  - npx playwright test --project=Chromium
-To exeucte specific test case group
+* To exeucte specific test case group
  - npx playwright test smoke/keyword
-To run with UI (non-headless) mode:
+* To run with UI (non-headless) mode:
  - npx playwright test --headed
-To run with trace viewer:
+* To run with trace viewer:
  - npx playwright test --trace on
 
 
 # Reports
-    Playwright report is generated and can be found in ./report/playwright-report/index.html
-    Current configuration is set to open the report after every run. Flag can be turned off to not open the report every time by setting "open: 'never'" in reporter setting of playwright.config.js
+* Playwright report is generated and can be found in ./report/playwright-report/index.html
+* Current configuration is set to open the report after every run. Flag can be turned off to not open the report every time by setting "open: 'never'" in reporter setting of playwright.config.js
 
 * Note:
  * - A Wait for page load to complete and then 1-second delay is added between interactions intentionally to avoid a crash observed 
