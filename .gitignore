@@ -1,0 +1,7 @@
+/reports-archives
+*logs/
+.DS_Store
+/node_modules
+/reports/allure
+/reports/playwright-report
+/test-results

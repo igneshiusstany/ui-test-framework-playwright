@@ -52,7 +52,8 @@ Use the instructions below to install and switch to Node 18.x.x based on your OS
 
 # Framework setup :
 
-* npm install
+* Install dependencies
+  - npm install
   - npx playwright install 
 
 * To execute the Test cases:

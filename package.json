@@ -1,0 +1,24 @@
+{
+  "name": "Playwright_automation_framework",
+  "version": "1.0.0",
+  "description": "Playwright Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test_parallel": "playwright test --workers 3"
+  },
+  "keywords": [],
+  "author": "stany",
+  "license": "open-source",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "allure-commandline": "^2.23.0",
+    "allure-playwright": "^2.4.0",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "winston": "^3.9.0",
+    "winston-daily-rotate-file": "^4.7.1"
+  }
+}
