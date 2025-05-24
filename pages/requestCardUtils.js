@@ -1,5 +1,8 @@
 import { commonUtil } from "../commons/commonUtil";
 import { xpathsRequestCardFrench } from "../pages/requestCardPageElements"
+import { xpathsHomePageFrench } from "./homePageElements"
+
+import { homePageUtil } from "./homePageUtils"
 
 export class requestCardUtil extends commonUtil{
 
@@ -7,7 +10,7 @@ export class requestCardUtil extends commonUtil{
  * Fills out the user's basic details on the request card form page.
  * 
  * Note:
- * - A 1-second delay is added between interactions intentionally to avoid a crash observed 
+ * - A Wait for page load to complete and then 1-second delay is added between interactions intentionally to avoid a crash observed 
  *   when the form is filled too quickly (likely due to frontend instability).
  * - This workaround simulates a more natural user input pace, avoiding the crash while maintaining flow.
  * 
@@ -26,6 +29,7 @@ export class requestCardUtil extends commonUtil{
 async fillUserBasicDetails(userDetails){
     try{
          await this.waitForCompleteLoad()
+
     for (const key in userDetails){
         await this.page.waitForTimeout(1000)
         if(userDetails[key]['type'] == 'modal'){

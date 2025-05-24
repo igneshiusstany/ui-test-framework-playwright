@@ -224,4 +224,42 @@ export class commonUtil extends pageUtil {
       assert.fail("Unexpected exception: " + e.toString());
     }
   }
+
+
+  startPersistentCookieMonitor(locator, action = 'Accept') {
+  let monitoring = true;
+
+  const monitor = async () => {
+    while (monitoring) {
+      try {
+        const popup = this.page.locator(locator);
+        const isVisible = await popup.isVisible({ timeout: 500 });
+
+        if (isVisible) {
+          console.log(`[Cookie Monitor] Detected cookie popup. Clicking "${action}"`);
+          await this.click(locator, `${action} Cookie Button`);
+        }
+      } catch (e) {
+        // Ignore if not visible or errors due to timeout
+      }
+
+      try {
+        await this.page.waitForTimeout(1000); // check every second
+      } catch {
+        // If the test ends and Playwright cancels timeouts, break the loop
+        break;
+      }
+    }
+  };
+
+  monitor().catch((e) => {
+    // Suppress "Test ended" errors if they slip through
+    console.warn(`[Cookie Monitor] Stopped due to test end: ${e.message}`);
+  });
+
+  return () => {
+    monitoring = false;
+  };
+}
+
 }

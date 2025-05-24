@@ -5,7 +5,15 @@ import { homePageUtil } from "../pages/homePageUtils"
 import { requestCardUtil } from "../pages/requestCardUtils"
 import { xpathsRequestCardFrench, textsRequestCardFrench } from "../pages/requestCardPageElements"
 import { goldCardRequestor } from "../test-data/mockUserDetails"
-import { constant } from "../commons/constants"
+
+
+
+test.beforeEach(async ({ page }) => {
+    const action = new commonUtil(page)
+  //Cookie handler initiation. Monitors in the background for cookie pop up and accepts it.
+  action.startPersistentCookieMonitor(xpathsHomePageFrench.acceptCookies, 'Accept')
+});
+
 
 test('Validate User is able to request for a gold card @smoke, @regression', async ({ page }) => {
 
@@ -15,14 +23,10 @@ test('Validate User is able to request for a gold card @smoke, @regression', asy
     const hpUtil = new homePageUtil(page)
     const rcUtil = new requestCardUtil(page)
 
+    
     await test.step('navigation', async () => {
-        await action.goto(constant.baseUrl)
+        await hpUtil.navigateToApplication()
     })
-
-    await test.step('Accept Cookies', async () => {
-        await hpUtil.handleCookies(xpathsHomePageFrench.acceptCookies, 'accept')
-    }
-    )
 
     await test.step('Click on Card types', async () => {
         await action.click(xpathsHomePageFrench.cardpremium, 'Cartes Particuliers Button')

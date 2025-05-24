@@ -10,6 +10,7 @@ Automation regression suite built using [Playwright](https://playwright.dev/) to
 - Supports **cross-browser** execution
 - Easily extensible test structure
 - Includes stability workarounds for known frontend timing issues(Added details in notes at the bottom)
+- Includes cookie pop up handler which continuously monitors for cookie popups and handles them.
 
 # Flow
 Global Setup(pre req setup/mocks) -> Move old reports to ArchiveTests -> Run tests -> Generate new reports -> Global Teardown(cleanup)
@@ -88,6 +89,7 @@ To run with trace viewer:
     Current configuration is set to open the report after every run. Flag can be turned off to not open the report every time by setting "open: 'never'" in reporter setting of playwright.config.js
 
 * Note:
- * - A 1-second delay is added between interactions intentionally to avoid a crash observed 
+ * - A Wait for page load to complete and then 1-second delay is added between interactions intentionally to avoid a crash observed 
     when the form is filled too quickly (likely due to frontend instability).
  * - This workaround simulates a more natural user input pace, avoiding the crash while maintaining flow.
+ * - Added a cookie pop up handler which continuously monitors for cookie popups and handles them.

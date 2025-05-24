@@ -1,4 +1,5 @@
 import { commonUtil } from "../commons/commonUtil";
+import { constant } from "../commons/constants"
 
 export class homePageUtil extends commonUtil{
 
@@ -11,13 +12,17 @@ export class homePageUtil extends commonUtil{
      */
 async handleCookies(locator, action){
     try{
-    await this.page.waitForTimeout(1000)
     await this.click(locator, `${action} Cookie button`)
-    await this.page.waitForTimeout(3000)
+    await this.waitForCompleteLoad()
     }
     catch{
         console.log('Cookie pop up is not observed')
     }
+}
+
+async navigateToApplication(){
+    await this.goto(constant.baseUrl)
+    await this.page.waitForTimeout(2000) //giving a few seconds for the initial pop up to load.
 }
 
 }
