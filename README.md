@@ -11,6 +11,10 @@ Automation regression suite built using [Playwright](https://playwright.dev/) to
 - Easily extensible test structure
 - Includes stability workarounds for known frontend timing issues(Added details in notes at the bottom)
 
+# Flow
+Global Setup(pre req setup/mocks) -> Move old reports to ArchiveTests -> Run tests -> Generate new reports -> Global Teardown(cleanup)
+
+
 # Pre requisites:
 Playwright requires Node.js 16+ (we use Node 18.x.x for this project).  
 Use the instructions below to install and switch to Node 18.x.x based on your OS.
