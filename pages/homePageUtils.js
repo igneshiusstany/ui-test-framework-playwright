@@ -1,5 +1,6 @@
 import { commonUtil } from "../commons/commonUtil";
 import { constant } from "../commons/constants"
+import { xpathsHomePageFrench } from "../pages/homePageElements"
 
 export class homePageUtil extends commonUtil{
 
@@ -20,9 +21,30 @@ async handleCookies(locator, action){
     }
 }
 
+/**
+ * Navigates to the application's base URL.
+ * 
+ * Adds a short timeout after navigation to allow any initial pop-ups or dynamic content to load.
+ * Useful for cases where elements may appear immediately after the page loads (e.g., cookie banners).
+ * 
+ * @async
+ */
 async navigateToApplication(){
-    await this.goto(constant.baseUrl)
-    await this.page.waitForTimeout(2000) //giving a few seconds for the initial pop up to load.
+    await this.goto(constant.baseUrl);
+    await this.page.waitForTimeout(2000); // Allow time for initial popups
 }
+
+/**
+ * Navigates to the Amex Cards page via the homepage.
+ * 
+ * Clicks through the "Become Client" menu and then selects the "Amex Cards" option.
+ * 
+ * @async
+ */
+async navigateToAmexCardsPage(){
+    await this.click(xpathsHomePageFrench.becomeClient, 'Become client menu ');
+    await this.click(xpathsHomePageFrench.amexCards, 'Amex cards ');
+}
+
 
 }

@@ -28,8 +28,9 @@ test('Validate User is able to request for a gold card @smoke, @regression', asy
         await hpUtil.navigateToApplication()
     })
 
-    await test.step('Click on Card types', async () => {
-        await action.click(xpathsHomePageFrench.cardpremium, 'Cartes Particuliers Button')
+    await test.step('Click on amex card from menu', async () => {
+        // await action.click(xpathsHomePageFrench.cardpremium, 'Cartes Particuliers Button')
+        await hpUtil.navigateToAmexCardsPage()
     }
     )
 
@@ -47,7 +48,6 @@ test('Validate User is able to request for a gold card @smoke, @regression', asy
     }
     )
     await test.step('Click on continue button', async () => {
-        // await page.waitForTimeout(10000)
         await action.click(xpathsRequestCardFrench.continueButton, 'continueButton ')  
     }
     )

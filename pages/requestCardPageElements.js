@@ -1,6 +1,7 @@
 export const xpathsRequestCardFrench = {
 
-    learnMoreGoldCard : `//a[@href="carte-de-paiement/gold-card-americanexpress/?linknav=fr-amex-cardshop-allcards-learn-GoldCardAmericanExpress<sup>®</sup>-fc" and contains(text(),'En savoir plus')]`,
+    // learnMoreGoldCard : `//a[@href="carte-de-paiement/gold-card-americanexpress/?linknav=fr-amex-cardshop-allcards-learn-GoldCardAmericanExpress<sup>®</sup>-fc" and contains(text(),'En savoir plus')]`,
+    learnMoreGoldCard : `//a[@href="https://www.americanexpress.com/fr/carte-de-paiement/gold-card-americanexpress/?intlink=fr-proprietary-gold" and @alt='En savoir plus']`,
     requestYourCard : `//a[@href="https://www.americanexpress.com/fr/3534?intlink=fr-amex-cardshop-details-apply-GoldCardAmericanExpress-siderail" and contains(text(),'Demandez votre Carte')]`,
     /**
      * Returns an XPath selector for a civility label based on the given input.
