@@ -17,7 +17,7 @@ Global Setup(pre req setup/mocks) -> Move old reports to ArchiveTests -> Run tes
 
 
 # Pre requisites:
-Playwright requires Node.js 16+ (we use Node 18.x.x for this project).  
+We use Node 18.x.x for this project.  
 Use the instructions below to install and switch to Node 18.x.x based on your OS.
 
 # NODE SETUP 
