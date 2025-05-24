@@ -88,7 +88,7 @@ Use the instructions below to install and switch to Node 18.x.x based on your OS
 * Playwright report is generated and can be found in ./report/playwright-report/index.html
 * Current configuration is set to open the report after every run. Flag can be turned off to not open the report every time by setting "open: 'never'" in reporter setting of playwright.config.js
 
-* Note:
+# Note:
  * - A Wait for page load to complete and then 1-second delay is added between interactions intentionally to avoid a crash observed 
     when the form is filled too quickly (likely due to frontend instability).
  * - This workaround simulates a more natural user input pace, avoiding the crash while maintaining flow.
