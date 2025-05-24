@@ -10,7 +10,7 @@ export class requestCardUtil extends commonUtil{
  * Fills out the user's basic details on the request card form page.
  * 
  * Note:
- * - A Wait for page load to complete and then 1-second delay is added between interactions intentionally to avoid a crash observed 
+ * - A Wait for page load to complete and then 1-second delay is added between interactions in details filling page intentionally to avoid a crash observed 
  *   when the form is filled too quickly (likely due to frontend instability).
  * - This workaround simulates a more natural user input pace, avoiding the crash while maintaining flow.
  * 

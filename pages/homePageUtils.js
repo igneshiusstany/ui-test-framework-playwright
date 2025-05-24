@@ -31,7 +31,7 @@ async handleCookies(locator, action){
  */
 async navigateToApplication(){
     await this.goto(constant.baseUrl);
-    await this.page.waitForTimeout(2000); // Allow time for initial popups
+    await this.page.waitForTimeout(3000); // Allow time for initial popups
 }
 
 /**
