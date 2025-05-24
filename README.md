@@ -75,13 +75,13 @@ Use the instructions below to install and switch to Node 18.x.x based on your OS
 
 # Additional Tips
 * To run only in Chromium:
- - npx playwright test --project=Chromium
+   - npx playwright test --project=Chromium
 * To exeucte specific test case group
- - npx playwright test smoke/keyword
+   - npx playwright test smoke/keyword
 * To run with UI (non-headless) mode:
- - npx playwright test --headed
+   - npx playwright test --headed
 * To run with trace viewer:
- - npx playwright test --trace on
+   - npx playwright test --trace on
 
 
 # Reports
